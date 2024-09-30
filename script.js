@@ -43,13 +43,50 @@ function moveImage(offset) {
     }
   });
 }
+function specifikbuttons(desiredIndex) {
+allImages.forEach((image, index)=> {
 
+if (index === desiredIndex) {
+  image.className = 'current-image';
+} else {
+  image.className = '';
+
+
+}
+})
+}
 // Fjern curret-image klassen fra nåværende bilde
 
 // Legg til current-image på det nye bildet
 
 let previousButton = document.querySelector('#previous-button');
 let nextButton = document.querySelector('#next-button');
+
+let btn1 = document.querySelector('#btn1')
+let btn2 = document.querySelector('#btn2')
+let btn3 = document.querySelector('#btn3')
+let btn4 = document.querySelector('#btn4')
+
+btn1.addEventListener('click', () => {
+specifikbuttons(0)
+
+});
+
+btn2.addEventListener('click', () => {
+  specifikbuttons(1)
+  
+  });
+
+  btn3.addEventListener('click', () => {
+    specifikbuttons(2)
+    
+    });
+
+
+    btn4.addEventListener('click', () => {
+      specifikbuttons(3)
+      
+      });
 
 previousButton.addEventListener('click', () => {
   moveImage(-1);
